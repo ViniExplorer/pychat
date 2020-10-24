@@ -1,7 +1,9 @@
-import client, server
+import client, server, socket
 
 # Starting up the app
 print("Chatroom App, fork from Zhang Zeyu's chatapp.\nCheck out https://github.com/zeyu2001/pychat\n")
+
+print("Your IP is", socket.gethostbyname(socket.gethostname()))
 
 # An int which will be the user's choice
 # on what they will do

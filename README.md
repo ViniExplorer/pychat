@@ -1,8 +1,8 @@
 # pychat
- A Python chatroom application with Tkinter GUI
+ A fork from the Python chatroom application with Tkinter GUI by Zhang Zeyu
 
 ## Create Your Own Chatroom Application
-Check out my tutorial [here](https://dev.to/zeyu2001/build-a-chatroom-app-with-python-44fa).
+Check out Zhang Zeyu's tutorial [here](https://dev.to/zeyu2001/build-a-chatroom-app-with-python-44fa).
 
 ## How to Run? 
 Run the `server.py` script from the command line. 

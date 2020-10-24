@@ -133,17 +133,11 @@ def exit(server):
             print('Shutting down the server...')
             os._exit(0)
 
+server = Server("", 1024)
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Chatroom Server')
-    parser.add_argument('host', help='Interface the server listens at')
-    parser.add_argument('-p', metavar='PORT', type=int, default=1060,
-                        help='TCP port (default 1060)')
-    args = parser.parse_args()
-
-    # Create and start server thread
-    server = Server(args.host, args.p)
+def start(host, port):
+    server = Server(host, port)
     server.start()
 
-    exit = threading.Thread(target = exit, args = (server,))
-    exit.start()
+    ex = threading.Thread(target = exit, args = (server,))
+    ex.start()

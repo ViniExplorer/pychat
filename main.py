@@ -9,7 +9,7 @@ choice = 0
 
 while True:
     try:
-        choice = int(input("Choose something to do: \n1 - Run a client\n2 - Run a server\n3 - Host and be a client"))
+        choice = int(input("Choose something to do: \n1 - Run a client\n2 - Run a server\n3 - Host and be a client\n"))
         break
     except:
         print("Invalid answer. Try again.")

@@ -5,6 +5,10 @@ print("Chatroom App, fork from Zhang Zeyu's chatapp.\nCheck out https://github.c
 
 print("Your IP is", socket.gethostbyname(socket.gethostname()))
 
+'''
+THIS IS DISABLED FOR NOW BECAUSE IT IS NOT WORKING
+AND THE SCHOOL WIFI MIGHT BLOCK UDP PROTOCOLS
+
 def LookForServers():
     # Setting up the socket to listen to on UDP protocol
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -28,6 +32,7 @@ c = input()
 if c == "y":
     LookForServers()
 
+'''
 
 # An int which will be the user's choice
 # on what they will do

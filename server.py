@@ -33,8 +33,10 @@ class Server(threading.Thread):
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind((self.host, self.port))
         
-        appearOn = AppearOnline(self.port)
-        appearOn.broadcastOnlineMsg()
+        # THIS IS DISABLED BECAUSE THE RECEIVE
+        # METHOD IS CURRENTLY NOT WORKING
+        #appearOn = AppearOnline(self.port)
+        #appearOn.broadcastOnlineMsg()
 
         sock.listen(1)
         print('Listening at', sock.getsockname())
@@ -78,13 +80,17 @@ class Server(threading.Thread):
         """
         self.connections.remove(connection)
 
+'''
+DISABLED BECAUSE MAIN.PY CAN'T RECEIVE IT
+
+UNCOMMENT WHEN RECEIVE METHOD IS WORKING
 
 class AppearOnline(threading.Thread):
-    '''
-    This class is just made to broadcast a message to every
-    IP address so in the main.py file they can receive it and
-    see it and connect to the server
-    '''
+    
+    # This class is just made to broadcast a message to every
+    # IP address so in the main.py file they can receive it and
+    # see it and connect to the server
+    
     def __init__(self, port):
         super().__init__()
         self.port = port
@@ -95,7 +101,7 @@ class AppearOnline(threading.Thread):
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
             sock.sendto(bytes("ONLINE", 'utf-8'), destination)
-
+'''
 
 class ServerSocket(threading.Thread):
     """
